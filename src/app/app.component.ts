@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { PokemonService } from './app.service';
+import {Component} from '@angular/core';
+import {PokemonService} from './app.service';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +7,13 @@ import { PokemonService } from './app.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'api-pokemon';
+  title = 'Maestría en software';
   pokemons:any;
-  constructor( private pokemon: PokemonService){ 
+  constructor( private pokemon: PokemonService){
   }
 
   async ngOnInit(): Promise<any> {
     this.pokemons = await this.pokemon.getPokemon();
-    console.log(this.pokemons)
+    console.log(this.pokemons.results)
   }
 }
