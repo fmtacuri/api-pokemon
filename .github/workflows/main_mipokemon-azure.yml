@@ -30,7 +30,7 @@ jobs:
       uses: docker/build-push-action@v2
       with:
         push: true
-        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_46958c730e2e4b49ab817854599d8143 }}/ftacurip/mipokemon:${{ github.sha }}
+        tags: index.docker.io/${{ secrets.AzureAppService_ContainerUsername_46958c730e2e4b49ab817854599d8143 }}/mipokemon:${{ github.sha }}
         file: ./Dockerfile
 
   deploy:
@@ -48,4 +48,4 @@ jobs:
         app-name: 'mipokemon-azure'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_9fae9f61b0174cf29e15a50763273cd0 }}
-        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_46958c730e2e4b49ab817854599d8143 }}/ftacurip/mipokemon:${{ github.sha }}'
+        images: 'index.docker.io/${{ secrets.AzureAppService_ContainerUsername_46958c730e2e4b49ab817854599d8143 }}/mipokemon:${{ github.sha }}'
